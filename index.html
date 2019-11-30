@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Lavanya</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript">
+        function loadContent(name) {
+            document.getElementById('content').src = name + '.html';
+        }    
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1>Lavanya Lankalapilli</h1>
+            <p>Live... Let live...</p>
+        </div>
+        <div class="tab">
+            <button class="tablinks" onclick="loadContent('home')">Home</button>
+            <button class="tablinks" onclick="loadContent('aboutMe')">About Me</button>
+            <button class="tablinks" onclick="loadContent('contactMe')">Contact Me</button>
+            <button class="tablinks" onclick="loadContent('gallery')">My Gallery</button>
+        </div>
+
+    </header>
+</body>
+<iframe src="home.html" id="content"></iframe>
+
+</html>

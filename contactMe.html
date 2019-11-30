@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        input[type=text] {
+            width: 100%;
+            height: 40px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 60px;
+        }
+
+        .container {
+            padding-top: 100px;
+            padding-left: 500px;
+            padding-right: 500px;
+            align-content: center;
+        }
+
+        .container h1 {
+            font-family: "brandon-grotesque";
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        input[type=submit] {
+            width: 100px;
+            height: 40px;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 2px;
+            border: 2px solid black;
+            background: white;
+            border-radius: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        function isValidEmail(email) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.value.match(mailformat)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function validateForm() {
+            var fname = document.forms["contactForm"]["fname"];
+            console.log("fname+++" + fname.value.trim() + "++++++");
+            var lname = document.forms["contactForm"]["lname"];
+            console.log("lname+++" + lname.value + "++++++");
+            var email = document.forms["contactForm"]["email"];
+            console.log("email+++" + email.value + "++++++");
+            var subject = document.forms["contactForm"]["subject"];
+            console.log("subject+++" + subject.value + "++++++");
+            var message = document.forms["contactForm"]["message"];
+            console.log("message+++" + message.value + "++++++");
+            if (fname.value.trim() == "") {
+                alert("Please enter your first name");
+                fname.focus();
+                return false;
+            }
+            if (lname.value.trim() == "") {
+                alert("Please enter your last name");
+                lname.focus();
+                return false;
+            }
+            if (email.value.trim() == "") {
+                alert("Please enter your email address");
+                email.focus();
+                return false;
+            }
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!email.value.trim().match(mailformat)) {
+                alert("Please enter valid email address");
+                email.focus();
+                return false;
+            }
+            if (subject.value.trim() == "") {
+                alert("Please enter subject");
+                subject.focus();
+                return false;
+            }
+            if (message.value.trim() == "") {
+                alert("Please enter message");
+                message.focus();
+                return false;
+            }
+        } 
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Have a web application requirement you'd like to discuss? Server side work request? Just want to say hi?
+            Let's chat... </h1>
+        <br>
+        <form name="contactForm" action="#" onsubmit="return validateForm()">
+
+            <label for="fname">First Name </label><span class="required">*</span>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+            <br />
+            <br />
+            <label for="lname">Last Name </label><span class="required">*</span>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+            <br />
+            <br />
+
+            <label for="email">Email Address </label><span class="required">*</span>
+            <input type="text" id="email" name="email" required>
+            <br />
+            <br />
+            <label for="subject">Subject </label><span class="required">*</span>
+            <textarea id="subject" name="subject" required></textarea>
+            <br />
+            <br />
+            <label for="message">Message </label><span class="required">*</span>
+            <textarea id="message" name="message" required></textarea>
+            <br />
+            <br />
+            <input type="submit" value="SUBMIT">
+
+        </form>
+    </div>
+</body>
+
+</html>

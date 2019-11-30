@@ -1,0 +1,16 @@
+{
+	"images": [
+		{
+			"url": "images/img1.jpg",
+			"name":"img1",
+			"information":"test information img1",
+			"uploaded date":"28-10-29"
+		},
+		{
+			"url": "images/img2.jpeg",
+			"name":"img2",
+			"information":"test information img2",
+			"uploaded date":"28-10-30"
+		}
+	]
+}
